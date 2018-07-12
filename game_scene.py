@@ -1,5 +1,6 @@
 from enum import Enum, unique
 from scene import Scene
+from road import Road
 
 
 @unique
@@ -16,9 +17,10 @@ class GameScene(Scene):
         super(GameScene, self).__init__(width, height, scene_stack)
         self.difficulty = difficulty
         self.counter = 0
+        self.road = Road(width, height)
 
     def update(self):
-        pass
+        self.road.update(10)
 
     def draw(self, surface):
-        pass
+        self.road.draw(surface)
